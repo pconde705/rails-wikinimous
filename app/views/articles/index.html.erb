@@ -1,0 +1,13 @@
+<h1>Articles#index</h1>
+<p>Find me in app/views/articles/index.html.erb</p>
+<div class="container">
+  <%= link_to "Create New Article", new_article_path(@article) %>
+
+  <% @articles.each do |article| %>
+  <h3><%= article.title %></h3>
+  <%= link_to "#{article.title} page", article_path(article) %>
+  <%= link_to "Edit", edit_article_path(article) %>
+  <%= link_to "Delete Entry", article_path(article), method: :delete %>
+  <p><%= article.content %></p>
+  <% end %>
+</div>
